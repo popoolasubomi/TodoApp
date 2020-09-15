@@ -24,7 +24,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     public static final String KEY_ITEM_TEXT = "item_text";
-    public static final String KEY_ITEM_POSITION = "item_text";
+    public static final String KEY_ITEM_POSITION = "item_position";
     public static final int EDIT_TEXT_CODE = 20;
 
     List<String> items;
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClicked(int position) {
                 Intent i = new Intent(MainActivity.this, EditActivity.class);
                 i.putExtra(KEY_ITEM_TEXT, items.get(position));
-                i.putExtra(KEY_ITEM_POSITION, items.get(position));
+                i.putExtra(KEY_ITEM_POSITION, position);
                 startActivityForResult(i, EDIT_TEXT_CODE);
             }
         };
